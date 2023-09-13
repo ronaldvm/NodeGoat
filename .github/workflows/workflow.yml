@@ -18,6 +18,8 @@ jobs:
         BRIDGE_POLARIS_APPLICATION_NAME: br-rel-test
         BRIDGE_POLARIS_PROJECT_NAME: nodegoat-fb
         BRIDGE_POLARIS_BRANCH_NAME: feature/187
+        BRIDGE_POLARIS_PRCOMMENT_ENABLED: TRUE
+        
       run: |
         curl -fLsS -o bridge.zip ${{ vars.BRIDGECLI_LINUX64 }} && unzip -qo -d $RUNNER_TEMP bridge.zip && rm -f bridge.zip
         $RUNNER_TEMP/synopsys-bridge --verbose --stage polaris polaris.assessment.types=SAST,SCA
