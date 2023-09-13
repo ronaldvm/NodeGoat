@@ -19,6 +19,7 @@ jobs:
         BRIDGE_POLARIS_PROJECT_NAME: nodegoat-fb
         BRIDGE_POLARIS_BRANCH_NAME: feature/187
         BRIDGE_POLARIS_PRCOMMENT_ENABLED: TRUE
+        GITHUB_TOKEN: ${{ secrets.PAT }} 
         
       run: |
         curl -fLsS -o bridge.zip ${{ vars.BRIDGECLI_LINUX64 }} && unzip -qo -d $RUNNER_TEMP bridge.zip && rm -f bridge.zip
