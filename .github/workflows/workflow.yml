@@ -22,9 +22,8 @@ jobs:
         
         
       run: |
-        github.user.token=${{ secrets.GTOKEN }}
         curl -fLsS -o bridge.zip ${{ vars.BRIDGECLI_LINUX64 }} && unzip -qo -d $RUNNER_TEMP bridge.zip && rm -f bridge.zip
-        $RUNNER_TEMP/synopsys-bridge --verbose --stage polaris polaris.assessment.types=SAST,SCA
+        $RUNNER_TEMP/synopsys-bridge --verbose --stage polaris polaris.assessment.types=SAST,SCA github.user.token=${{ secrets.GTOKEN }}
         
 #    - name: Save Logs
 #      if: always()
